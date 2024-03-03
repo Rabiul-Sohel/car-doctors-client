@@ -6,9 +6,10 @@ const Services = () => {
   const [services, setServices] = useState([])
 
   useEffect(() => {
-    axios.get('services.json')
+    axios
+      .get("http://localhost:5000/services")
       // .then(res => res.json())
-     .then(data => setServices(data.data))
+      .then((data) => setServices(data.data));
   },[])
   return (
     <div className="mt-4 text-center space-y-5">
